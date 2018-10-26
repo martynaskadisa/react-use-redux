@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import store from "./store";
+import { useContext, useState, useEffect } from "react";
+import StoreContext from './context';
 
 const defaultMapStateToProps = () => ({});
 const defaultMapDispatchToProps = dispatch => dispatch;
@@ -14,7 +14,7 @@ const createUseConnect = (
   mapDispatchToProps = defaultMapDispatchToProps,
   mergeProps = defaultMergeProps
 ) => ownProps => {
-  const { getState, dispatch, subscribe } = store;
+  const { getState, dispatch, subscribe } = useContext(StoreContext);
 
   const getProps = () => {
     return mergeProps(
