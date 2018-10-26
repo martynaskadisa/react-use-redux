@@ -1,28 +1,24 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import createUseConnect from './create-use-connect';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+const useConnect = createUseConnect(
+  (state) => ({ value: state.form.value }),
+  (dispatch) => ({ setValue: (value) => dispatch({ type: 'SET_FORM_VALUE', payload: value }) })
+)
+
+const App = () => {
+  const { value, setValue } = useConnect()
+
+  const handleChange = (e) => setValue(e.target.value);
+
+  return (
+    <form>
+      <label>
+        Name:
+        <input value={value} onChange={handleChange} />
+      </label>
+    </form>
+  )
 }
 
 export default App;
