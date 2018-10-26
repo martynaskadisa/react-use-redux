@@ -1,6 +1,16 @@
 {
   "name": "react-use-redux",
   "version": "0.1.0",
+  "author": "Martynas Kadiša <kadisa.martynas@gmail.com>",
+  "homepage": "https://github.com/martynaskadisa/react-use-redux#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martynaskadisa/react-use-redux.git"
+  },
+  "bugs": {
+    "url": "https://github.com/martynaskadisa/react-use-redux/issues"
+  },
+  "license": "MIT",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "peerDependencies": {
