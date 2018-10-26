@@ -1,9 +1,10 @@
 import nodeResolve from "rollup-plugin-node-resolve";
 import babel from "rollup-plugin-babel";
 import pkg from "./package.json";
+import commonjs from "rollup-plugin-commonjs";
 
 const input = "./src/index.js";
-const external = ['react']
+const external = ['react', '@babel/runtime']
 
 export default [
   {
@@ -18,7 +19,8 @@ export default [
         runtimeHelpers: true,
         plugins: ["@babel/transform-runtime"]
       }),
-      nodeResolve()
+      nodeResolve(),
+      commonjs()
     ]
   },
   {
@@ -33,7 +35,8 @@ export default [
         runtimeHelpers: true,
         plugins: [["@babel/transform-runtime", { useESModules: true }]]
       }),
-      nodeResolve()
+      nodeResolve(),
+      commonjs()
     ]
   }
 ];

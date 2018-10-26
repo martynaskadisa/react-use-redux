@@ -23,6 +23,7 @@
     "react": "^16.7.0-alpha.0",
     "rollup": "^0.66.6",
     "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-resolve": "^3.4.0"
   },
   "scripts": {
