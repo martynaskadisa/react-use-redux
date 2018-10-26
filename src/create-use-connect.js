@@ -14,7 +14,8 @@ const createUseConnect = (
   mapDispatchToProps = defaultMapDispatchToProps,
   mergeProps = defaultMergeProps
 ) => ownProps => {
-  const { getState, dispatch, subscribe } = useContext(StoreContext);
+  const store = useContext(StoreContext);
+  const { getState, dispatch, subscribe } = store;
 
   const getProps = () =>
     mergeProps(
@@ -24,7 +25,7 @@ const createUseConnect = (
 
   const [state, setState] = useState(getProps());
 
-  useEffect(() => subscribe(() => setState(getProps())));
+  useEffect(() => subscribe(() => setState(getProps())), [store]);
 
   return state;
 };
