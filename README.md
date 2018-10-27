@@ -1,7 +1,8 @@
 # react-use-redux
 
-Redux binding for upcoming React hooks
+Alternative Redux bindings with upcoming [React hooks](http://reactjs.org/hooks). 
 
+Note: this is an experimental package. I do not recommend using this in production. You're probably better off using [react-redux](https://github.com/reduxjs/react-redux) for now.
 
 ## Installing
 
@@ -57,10 +58,29 @@ And that's it! Now we can use redux state in our components without hocs or rend
 
 ## API
 
-- `StoreContext`
+### `StoreContext`
 
-  React context which has two properties: `Provider` and `Consumer`. 
+React context which has two properties: `Provider` and `Consumer`. Value provided to `<StoreContext.Provider />` should be an instance of Redux store. Use this as a top level wrapper of your app.
 
-- `createUseConnect([mapStateToProps], [mapDispatchToProps], [mergeProps])`
+### `createUseConnect([mapStateToProps], [mapDispatchToProps], [mergeProps])`
 
-  Hook creator, which returns actual hook to be used inside a component.
+Hook creator which returns `useConnect` hook to be used inside a component. Behaviour is almost identical to `connect` from `react-redux`. `useConnect` returns an object of props.
+
+#### `mapStateToProps((state, ownProps) => object)`
+
+Called everytime when store is updated. Used to calculate props from current state.
+
+#### `mapDispatchToProps((dispatch, ownProps) => object)`
+
+Used to wrap dispatch over provided functions. If `mapDispatchToProps` is not provided, it will fallback to returning `dispatch` to props.
+
+#### `mergeProps((stateProps, dispatchProps, ownProps) => object)`
+
+Used to tweak how props should be merged, this is an advanced property. When this function is not provided left-to-right merge is applied:
+```js
+(stateProps, dispatchProps, ownProps) => ({ ...stateProps, ...dispatchProps, ...ownProps })
+```
+
+## Licence
+
+MIT
