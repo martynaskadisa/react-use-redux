@@ -81,6 +81,6 @@ Used to tweak how props should be merged, this is an advanced property. When thi
 (stateProps, dispatchProps, ownProps) => ({ ...stateProps, ...dispatchProps, ...ownProps })
 ```
 
-## Licence
+## License
 
 MIT
