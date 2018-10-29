@@ -4,6 +4,8 @@ Alternative Redux bindings with upcoming [React hooks](http://reactjs.org/hooks)
 
 Note: this is an experimental package and hooks are still a proposal/alpha. I do not recommend using this in production. You're probably better off using [react-redux](https://github.com/reduxjs/react-redux) for now.
 
+Follow discussion of using hooks in `react-redux` repo [here](https://github.com/reduxjs/react-redux/issues/1063)
+
 ## Installing
 
 ```
