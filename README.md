@@ -1,6 +1,6 @@
 # react-use-redux
 
-The wait is over, just use official `react-redux` package if you want hooks.
+# The wait is over, just use official `react-redux` package if you want hooks.
 
 Alternative Redux bindings with [React hooks](http://reactjs.org/hooks). 
 
