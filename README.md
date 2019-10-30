@@ -1,10 +1,12 @@
 # react-use-redux
 
-Alternative Redux bindings with upcoming [React hooks](http://reactjs.org/hooks). 
+The wait is over, just use official `react-redux` package if you want hooks.
 
-Note: this is an experimental package and hooks are still a proposal/alpha. I do not recommend using this in production. You're probably better off using [react-redux](https://github.com/reduxjs/react-redux) for now.
+Alternative Redux bindings with [React hooks](http://reactjs.org/hooks). 
 
-Follow discussion of using hooks in `react-redux` repo [here](https://github.com/reduxjs/react-redux/issues/1063)
+Note: this is an experimental package. I do not recommend using this in production. You're probably better off using [react-redux](https://github.com/reduxjs/react-redux).
+
+Discussion of using hooks in `react-redux` repo [here](https://github.com/reduxjs/react-redux/issues/1063)
 
 ## Installing
 
